@@ -18,7 +18,7 @@ public class HelloController {
 		return ResponseEntity.ok("Hello Spring Boot Boilerplate!");
 	}
 
-	@GetMapping("/bye")
+	@GetMapping("/byee")
 	public ResponseEntity<String> sayBye() {
 
 		return ResponseEntity.ok("Bye Spring Boot Boilerplate!");
