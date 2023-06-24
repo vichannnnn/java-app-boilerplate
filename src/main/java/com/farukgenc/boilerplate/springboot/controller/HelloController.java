@@ -12,13 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-	@GetMapping("/hellooo")
+	@GetMapping("/hello")
 	public ResponseEntity<String> sayHello() {
 
-		return ResponseEntity.ok("Hello Spring Boot Boilerplate!");
+		return ResponseEntity.ok("World!!!");
 	}
 
-	@GetMapping("/byee")
+	@GetMapping("/bye")
 	public ResponseEntity<String> sayBye() {
 
 		return ResponseEntity.ok("Bye Spring Boot Boilerplate!");
