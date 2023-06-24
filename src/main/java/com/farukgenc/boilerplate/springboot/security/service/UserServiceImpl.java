@@ -1,12 +1,12 @@
 package com.farukgenc.boilerplate.springboot.security.service;
 
-import com.farukgenc.boilerplate.springboot.service.UserValidationService;
 import com.farukgenc.boilerplate.springboot.model.User;
 import com.farukgenc.boilerplate.springboot.model.UserRole;
 import com.farukgenc.boilerplate.springboot.security.dto.AuthenticatedUserDto;
 import com.farukgenc.boilerplate.springboot.security.dto.RegistrationRequest;
 import com.farukgenc.boilerplate.springboot.security.dto.RegistrationResponse;
 import com.farukgenc.boilerplate.springboot.security.mapper.UserMapper;
+import com.farukgenc.boilerplate.springboot.service.UserValidationService;
 import com.farukgenc.boilerplate.springboot.utils.GeneralMessageAccessor;
 import com.farukgenc.boilerplate.springboot.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
