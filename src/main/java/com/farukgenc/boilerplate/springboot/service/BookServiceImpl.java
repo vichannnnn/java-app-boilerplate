@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import org.springframework.data.domain.Page;
@@ -61,6 +62,31 @@ public class BookServiceImpl implements BookService {
         bookRepository.delete(book);
     }
 
+    @Override
+    public List<Books> findAllPublishedAfter(LocalDate date) {
+        return bookRepository.findAllPublishedAfter(date);
+    }
+
+    @Override
+    public List<Books> findAllByAuthor(String author) {
+        return bookRepository.findAllByAuthor(author);
+    }
+
+    @Override
+    public List<Books> findByTitleContainingIgnoreCase(String title) {
+        return bookRepository.findByTitleContainingIgnoreCase(title);
+    }
+
+    @Override
+    public Long countByPagesGreaterThan(int pages) {
+        return bookRepository.countByPagesGreaterThan(pages);
+    }
+
+    @Override
+    public Page<Books> findAllByPublisherOrderByPublishDateDesc(String publisher, Pageable pageable) {
+        return bookRepository.findAllByPublisherOrderByPublishDateDesc(publisher, pageable);
+    }
+
     public void checkIfBookExists(Books book) {
         final String isbn = book.getIsbn();
         final boolean bookInRepository = checkIsbn(isbn);
@@ -101,4 +127,6 @@ public class BookServiceImpl implements BookService {
             return false;
         }
     }
+
+    
 }

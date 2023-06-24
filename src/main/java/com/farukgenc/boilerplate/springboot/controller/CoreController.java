@@ -60,6 +60,16 @@ public class CoreController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/books/publisher/{publisher}")
+    public ResponseEntity<Page<Books>> getBooksByPublisher(
+    @RequestParam(value = "page", defaultValue = "0") int page,
+    @RequestParam(value = "size", defaultValue = "10") int size,
+    @PathVariable String publisher) {
+    Pageable pageable = PageRequest.of(page, size);
+    Page<Books> books = bookService.findAllByPublisherOrderByPublishDateDesc(publisher, pageable);
+    return ResponseEntity.ok(books);
+}
+
 	@ExceptionHandler(BookValidationException.class)
     public ResponseEntity<ErrorResponse> handleBookValidationException(BookValidationException ex) {
         ErrorResponse errorResponse = new ErrorResponse(

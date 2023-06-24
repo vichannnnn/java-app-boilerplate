@@ -3,7 +3,6 @@ package com.farukgenc.boilerplate.springboot.security.service;
 import com.farukgenc.boilerplate.springboot.model.UserRole;
 import com.farukgenc.boilerplate.springboot.security.dto.AuthenticatedUserDto;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,7 +18,7 @@ import java.util.Objects;
  *
  * @author Faruk
  */
-@Slf4j
+
 @Service
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
